@@ -1,0 +1,34 @@
+server:
+  port: 8083
+
+info:
+  scm-url: "@scm.url@"
+  version: "@project.version@"
+  name: "@pom.artifactId@"
+  description: "@project.description@"
+  spring-boot-version: "@project.parent.version@"
+
+spring:
+  application:
+    name: "@pom.artifactId@"
+  boot:
+    admin:
+      url: http://localhost:8081
+      username: "${security.user.name}"
+      password: "${security.user.password}"
+      client:
+        prefer-ip: true
+        metadata:
+          user.name: ${security.user.name}
+          user.password: ${security.user.password}
+
+security:
+  user:
+    name: user
+    password: password
+  basic:
+    enabled: false
+
+management:
+  security:
+    enabled: true
