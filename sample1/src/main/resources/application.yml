@@ -9,6 +9,9 @@ info:
   spring-boot-version: "@project.parent.version@"
 
 spring:
+  profiles:
+    active: dev
+# spring boot admin
   application:
     name: "@pom.artifactId@"
   boot:
